@@ -1,0 +1,20 @@
+#数据库配置
+spring:
+  datasource:
+    name: test
+    url: jdbc:mysql://127.0.0.1:3306/test?useUnicode\=true&characterEncoding\=utf-8&allowMultiQueries\=true
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.shuma.model
+
+#logback日志配置
+#路径(设置日志文件存放在那个路径下)
+logging:
+  file: ../log/api.log
+#DEBUG(配置日志文件,格式为logging.level.包名 = 级别)<!-- ERROR INFO WARN DEBUG TRACE -->
+  level:
+    com.shuma.dao: debug
